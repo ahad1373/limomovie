@@ -42,6 +42,7 @@
                                $links = $link_download->where('video_id' , '=' , $video->video_id)->all();
                             @endphp
 
+                            @if(auth()->user()->isActive())
                             <div class="categories">
                                 <h3 class="categories__title">لینک های دانلود </h3>
                                 @foreach($links as $link)
@@ -49,7 +50,11 @@
                                 @endforeach
 
                             </div>
-
+                            @else
+                                <div class="categories">
+                                    <h3 class="categories__title">برای دانلود  فیلم لطفا اشتراک تهیه فرمایید</h3>
+                                </div>
+                            @endif
                           <div class="categories">
                               <form action="{{route('interest-video')}}" method="post">
                                   @csrf

@@ -67,6 +67,16 @@
                         </li>
 
 
+            <li class="{{isActive(['admin.plans.index' , 'admin.plans.create' , 'admin.plans.edit'],'menu-open')}} nav-item"><a href=""><i class="ft-layers"></i><span class="menu-title" data-i18n=""> پنل اشتراک</span></a>
+                <ul class="menu-content">
+                    <li class="{{isActive(['admin.updates.index' , 'admin.updates.film'])}}"><a class="menu-item" href="{{route('admin.plans.index')}}">لیست پنل ها</a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+
 
             <li class="{{isActive(['admin.updates.index'],'menu-open')}} nav-item"><a href=""><i class="ft-layers"></i><span class="menu-title" data-i18n="">بروز رسانی</span></a>
                 <ul class="menu-content">

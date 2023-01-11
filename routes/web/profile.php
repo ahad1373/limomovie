@@ -20,4 +20,4 @@ Route::patch('/profile/{user}/update' , [\App\Http\Controllers\Profile\User\User
 Route::resource('user' , \App\Http\Controllers\Profile\User\UserController::class);
 
 Route::resource('/address' , \App\Http\Controllers\Profile\AddressController::class);
-
+Route::get('/profile/vip/{month}' , [\App\Http\Controllers\Profile\VipUserController::class , 'vip'])->name('vip');

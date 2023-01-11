@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Profile\User;
 use App\Http\Controllers\Controller;
 use App\Models\Interest;
 use App\Models\ListLinkPaginationVideo;
+use App\Models\Plan;
 use App\Models\Serial;
 use App\Models\SerialGenre;
 use App\Models\User;
@@ -30,7 +31,8 @@ class UserController extends Controller
         $genres = VideoGenre::all();
         $serials = Serial::all();
         $s_genres = SerialGenre::all();
-        return view('home.profile.index' , compact('user'  , 'images'  ,'interests' , 'videos' , 'genres' , 'serials' , 's_genres'));
+        $plans = Plan::all();
+        return view('home.profile.index' , compact('plans' ,'user'  , 'images'  ,'interests' , 'videos' , 'genres' , 'serials' , 's_genres'));
     }
 
 

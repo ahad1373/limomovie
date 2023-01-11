@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -23,6 +24,7 @@ return new class extends Migration
             $table->boolean('super')->default(0);
             $table->string('national_code')->nullable();
             $table->string('number_card')->nullable();
+            $table->timestamp('viptime');
             $table->boolean('Newsletters')->default(0);
             $table->rememberToken();
             $table->timestamps();

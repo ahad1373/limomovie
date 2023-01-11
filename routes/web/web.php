@@ -39,3 +39,4 @@ Route::get('category/{slug?}/category',[\App\Http\Controllers\HomeController::cl
 
 Route::get('/search', [App\Http\Controllers\HomeController::class, 'search'])->name('search');
 
+

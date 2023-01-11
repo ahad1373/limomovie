@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -17,6 +18,6 @@ class ProfileController extends Controller
     {
 
         $user = auth()->user();
-        return view('home.profile.index' , compact('user'));
+        return view('home.profile.index' , compact('user' , 'plans'));
     }
 }

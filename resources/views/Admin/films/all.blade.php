@@ -44,15 +44,14 @@
                                     <th>برو به جزئیات</th>
                                     <th>ویرایش</th>
                                     <th>حذف</th>
+                                    <th>فیلم مرتبط</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($films as $film)
                                     <tr>
-
                                              <td>
                                                  <a href="{{route('single_film' , $film->original_title)}}" target="_blank"> {{$film->persian_title}}</a>
-
                                             </td>
                                             <td>
                                                {{$film->time}}
@@ -60,7 +59,6 @@
                                             <td>
                                                 {{$film->imdb}}
                                             </td>
-
                                         <td>
                                             <a href="{{route('admin.films.show'  , $film->id)}}" class="btn btn-sm btn-success">جزئیات</a>
                                         </td>
@@ -73,9 +71,10 @@
                                                 @method('delete')
                                                 <button class="btn btn-sm btn-danger" type="submit">حذف</button>
                                             </form>
-
                                         </td>
-
+                                        <td>
+                                            <a href="{{route('admin.films.similar.create',$film->id)}}" class="btn btn-sm btn-primary">افزودن</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

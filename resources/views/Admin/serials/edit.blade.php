@@ -111,7 +111,7 @@
 
                                     <div class="form-group">
                                         <label for="contactinput5">گروه سنی</label>
-                                        <select name="age_category" class="form-select w-100 h-100" aria-label="Default select example">
+                                        <select name="age_category" class="form-control border-primary" aria-label="Default select example">
                                             <option value="G">G</option>
                                             <option value="PG">PG</option>
                                             <option value="PG-13">PG-13</option>

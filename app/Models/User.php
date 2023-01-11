@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -26,7 +27,8 @@ class User extends Authenticatable
         'super',
         'Newsletters',
         'number_card',
-        'national_code'
+        'national_code' ,
+        'viptime'
     ];
 
     /**
@@ -47,6 +49,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isActive()
+    {
+        return $this->viptime > Carbon::now() ? true : false;
+    }
 
     public function Staff()
     {
@@ -100,11 +107,14 @@ class User extends Authenticatable
     }
 
 
-    public function similars()
+    public function similars_video()
     {
-        return $this->hasMany(Similar::class);
+        return $this->hasMany(SimilarVideo::class);
     }
-
+    public function similars_serial()
+    {
+        return $this->hasMany(SimilarSerial::class);
+    }
 
     public function Address()
     {

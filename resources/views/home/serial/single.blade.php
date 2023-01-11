@@ -64,6 +64,7 @@
                                 <a href="category.html" class="categories__item">{{$genre->title}}</a>
                             @endforeach
                         </div>
+                        @if(auth()->user()->isActive())
                         <div class="categories">
                             <ul dir="rtl">
                                 @foreach($links as $link)
@@ -83,7 +84,15 @@
                                 @endforeach
                             </ul>
                         </div>
-
+                        @else
+                            <div class="categories">
+                                <ul dir="rtl">
+                                        <div class="categories">
+                                            <h3 class="categories__title">برای دانلود  فیلم لطفا اشتراک تهیه فرمایید</h3>
+                                        </div>
+                                </ul>
+                            </div>
+                        @endif
 
                     </div>
                     <!-- end video player -->

@@ -36,7 +36,7 @@ Route::post('serial/genre/{id}/store' , [\App\Http\Controllers\Admin\serial\Deta
 Route::post('serial/actor' , [\App\Http\Controllers\Admin\serial\Details\AddDetailsSerialController::class , 'actor_index'])->name('serial-actor-index');
 Route::post('serial/actor/{id}/store' , [\App\Http\Controllers\Admin\serial\Details\AddDetailsSerialController::class , 'actor_store'])->name('serial-actor-store');
 
-
+//Route::get('/plans')->name('plan');
 
 
 
@@ -52,3 +52,7 @@ Route::post('user/{user}/permission' , [\App\Http\Controllers\Admin\User\Permiss
 
 
 Route::resource('categories' , \App\Http\Controllers\Admin\CategoryController::class);
+
+Route::resource('plans' , \App\Http\Controllers\Admin\PlanController::class);
+Route::resource('films.similar' , \App\Http\Controllers\Admin\film\SimilarControoler::class);
+Route::resource('serials.similar' , \App\Http\Controllers\Admin\serial\SimilarControoler::class);
